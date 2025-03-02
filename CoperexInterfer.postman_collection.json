@@ -1,0 +1,381 @@
+{
+	"info": {
+		"_postman_id": "e08588b0-e2dd-4ac0-93ad-2aa253939db2",
+		"name": "CoperexInterfer",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "37951889"
+	},
+	"item": [
+		{
+			"name": "Admin",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "Andrés",
+									"type": "text"
+								},
+								{
+									"key": "surname",
+									"value": "Coloma",
+									"type": "text"
+								},
+								{
+									"key": "username",
+									"value": "andcol",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "andres@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "12345Ac-00",
+									"type": "text"
+								},
+								{
+									"key": "phone",
+									"value": "12346578",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3515/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3515",
+							"path": [
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var data = JSON.parse(responseBody);\r",
+									"postman.setGlobalVariable(\"token\", data.token)"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "userLoggin",
+									"value": "admin",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "Admin1234",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3515/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3515",
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Interfer",
+			"item": [
+				{
+					"name": "Register Company",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "Tech nnovations S.A.",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "Company specialized in software development and AI.",
+									"type": "text"
+								},
+								{
+									"key": "impactLevel",
+									"value": "High",
+									"type": "text"
+								},
+								{
+									"key": "yearsOfExperience",
+									"value": "10",
+									"type": "text"
+								},
+								{
+									"key": "category",
+									"value": "Technology",
+									"type": "text"
+								},
+								{
+									"key": "contactEmail",
+									"value": "info@techinnovations.com",
+									"type": "text"
+								},
+								{
+									"key": "phone",
+									"value": "12345678",
+									"type": "text"
+								},
+								{
+									"key": "address",
+									"value": "Zona 10, Ciudad de Guatemala, Guatemala",
+									"type": "text"
+								},
+								{
+									"key": "website",
+									"value": "https://www.techinnovations.com",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3515/v1/company/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3515",
+							"path": [
+								"v1",
+								"company",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Company",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "GreenTech Solutions",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "Company focused on sustainable energy and eco-friendly tech.",
+									"type": "text"
+								},
+								{
+									"key": "impactLevel",
+									"value": "Medium",
+									"type": "text"
+								},
+								{
+									"key": "yearsOfExperience",
+									"value": "8",
+									"type": "text"
+								},
+								{
+									"key": "category",
+									"value": "Automotive",
+									"type": "text"
+								},
+								{
+									"key": "contactEmail",
+									"value": "contact@greentech.com",
+									"type": "text"
+								},
+								{
+									"key": "phone",
+									"value": "987654321",
+									"type": "text"
+								},
+								{
+									"key": "address",
+									"value": "Zona 15, Ciudad de Guatemala, Guatemala",
+									"type": "text"
+								},
+								{
+									"key": "website",
+									"value": "https://www.greentech.com",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3515/v1/company/67c4da22a829b00a3997dc39",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3515",
+							"path": [
+								"v1",
+								"company",
+								"67c4da22a829b00a3997dc39"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Companies",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": []
+						},
+						"url": {
+							"raw": "http://localhost:3515/v1/company/?category=Technology",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3515",
+							"path": [
+								"v1",
+								"company",
+								""
+							],
+							"query": [
+								{
+									"key": "category",
+									"value": "Technology"
+								},
+								{
+									"key": "years",
+									"value": "5",
+									"disabled": true
+								},
+								{
+									"key": "impact",
+									"value": "High",
+									"disabled": true
+								},
+								{
+									"key": "sort",
+									"value": "A-Z",
+									"disabled": true
+								},
+								{
+									"key": "sort",
+									"value": "Z-A",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Excel",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": []
+						},
+						"url": {
+							"raw": "http://localhost:3515/v1/company/report",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3515",
+							"path": [
+								"v1",
+								"company",
+								"report"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
